@@ -53,9 +53,9 @@ class LandingPage extends StatelessWidget {
                   end: Alignment.bottomRight,
                   colors: [
                     Color(0xFF0D47A1), // Blue 900
-                    Color(0xFF1976D2), // Blue 700
-                    Color(0xFFFF9800), // Orange 500
-                    Color(0xFFFFCA28), // Amber 400
+                    Color(0xFF1565C0), // Blue 800
+                    Color(0xFFE65100), // Orange 900 (Strong Orange)
+                    Color(0xFFFF6F00), // Amber 900 (Strong Orange/Amber)
                   ],
                 ),
               ),
@@ -165,35 +165,48 @@ class LandingPage extends StatelessWidget {
   Widget _buildFeatureCard(IconData icon, String title, String description) {
     return Container(
       width: 300,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        color: const Color(0xFF1E1E1E), // Darker card background
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white.withOpacity(0.1)),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: const Offset(0, 3),
+            color: Colors.black.withOpacity(0.3),
+            spreadRadius: 2,
+            blurRadius: 10,
+            offset: const Offset(0, 5),
           ),
         ],
       ),
       child: Column(
         children: [
-          Icon(icon, size: 50, color: Colors.blue),
-          const SizedBox(height: 20),
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.blue.withOpacity(0.1),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(icon, size: 40, color: Colors.blueAccent),
+          ),
+          const SizedBox(height: 25),
           Text(
             title,
             style: GoogleFonts.poppins(
-              fontSize: 20,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           Text(
             description,
             textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(color: Colors.grey[600]),
+            style: GoogleFonts.roboto(
+              color: Colors.white70,
+              height: 1.5,
+              fontSize: 16,
+            ),
           ),
         ],
       ),
