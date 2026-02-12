@@ -21,18 +21,8 @@ class LandingPage extends StatelessWidget {
           style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
         ),
         actions: [
-          TextButton(
-            onPressed: () {},
-            child: const Text('Inicio'),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('Características'),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('Contacto'),
-          ),
+          TextButton(onPressed: () {}, child: const Text('Inicio')),
+          TextButton(onPressed: () {}, child: const Text('Características')),
           const SizedBox(width: 20),
         ],
       ),
@@ -42,7 +32,18 @@ class LandingPage extends StatelessWidget {
             // Hero Section
             Container(
               padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
-              color: Theme.of(context).primaryColor.withOpacity(0.05),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xFF0D47A1), // Blue 900
+                    Color(0xFF1976D2), // Blue 700
+                    Color(0xFFFF9800), // Orange 500
+                    Color(0xFFFFCA28), // Amber 400
+                  ],
+                ),
+              ),
               child: Column(
                 children: [
                   Text(
@@ -51,7 +52,7 @@ class LandingPage extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       fontSize: 48,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.white,
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -60,7 +61,7 @@ class LandingPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                       fontSize: 20,
-                      color: Colors.grey[700],
+                      color: Colors.white.withOpacity(0.9),
                     ),
                   ),
                   const SizedBox(height: 40),
@@ -69,22 +70,30 @@ class LandingPage extends StatelessWidget {
                       // TODO: Add download link
                     },
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: const Color(0xFF0D47A1),
+                      elevation: 8,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 20),
-                      textStyle: const TextStyle(fontSize: 18),
+                        horizontal: 40,
+                        vertical: 20,
+                      ),
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     child: const Text('Descargar Demo'),
                   ),
                 ],
               ),
             ),
-            
+
             // Features Placeholder
             Padding(
               padding: const EdgeInsets.all(40.0),
               child: Column(
                 children: [
-                   Text(
+                  Text(
                     'Características Principales',
                     style: GoogleFonts.poppins(
                       fontSize: 32,
@@ -103,14 +112,14 @@ class LandingPage extends StatelessWidget {
                         'Lleva un registro detallado de cada préstamo realizado.',
                       ),
                       _buildFeatureCard(
-                        Icons.notifications,
-                        'Recordatorios',
-                        'Recibe notificaciones de pagos pendientes.',
+                        Icons.receipt_long,
+                        'Emite Comprobantes',
+                        'Comparte el comprobante de pago y consulta de cuotas a tus clientes.',
                       ),
                       _buildFeatureCard(
-                        Icons.bar_chart,
-                        'Estadísticas',
-                        'Visualiza el rendimiento de tus finanzas.',
+                        Icons.security,
+                        'Seguridad',
+                        'Seguridad de nivel bancario con autenticación biométrica.',
                       ),
                     ],
                   ),
