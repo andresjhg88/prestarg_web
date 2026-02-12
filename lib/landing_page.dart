@@ -33,9 +33,11 @@ class LandingPage extends StatelessWidget {
             child: const Text('Inicio', style: TextStyle(color: Colors.white)),
           ),
           TextButton(
-            onPressed: () {},
-            child: const Text('Características',
-                style: TextStyle(color: Colors.white)),
+            onPressed: () => _showFeaturesDialog(context),
+            child: const Text(
+              'Características',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
           const SizedBox(width: 20),
         ],
@@ -52,10 +54,10 @@ class LandingPage extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Color(0xFF0D47A1), // Deep Blue
-                    Color(0xFF4A148C), // Violet/Deep Purple
-                    Color(0xFF7B1FA2), // Purple
-                    Color(0xFFFB8C00), // Subtle Orange
+                    Color(0xFF01579B), // Trustworthy Deep Blue
+                    Color(0xFF311B92), // Professional Deep Purple
+                    Color(0xFF6A1B9A), // Creative Violet
+                    Color(0xFFFF6F00), // Energetic Amber/Orange (Subtle end)
                   ],
                 ),
               ),
@@ -210,6 +212,96 @@ class LandingPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  void _showFeaturesDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          backgroundColor: const Color(0xFF1E1E1E),
+          child: Container(
+            padding: const EdgeInsets.all(24),
+            constraints: const BoxConstraints(maxWidth: 400),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.withOpacity(0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child:
+                      const Icon(Icons.info_outline, size: 40, color: Colors.blue),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  'Sobre Prestarg',
+                  style: GoogleFonts.poppins(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  'Prestarg es tu solución integral para la gestión financiera. Optimizada para ofrecerte control total, seguridad y facilidad de uso desde el primer día.',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.roboto(
+                    color: Colors.white70,
+                    fontSize: 16,
+                    height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.orange.withOpacity(0.3)),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.warning_amber_rounded,
+                          color: Colors.orange),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          'Versión de prueba activa por 29 días.',
+                          style: GoogleFonts.roboto(
+                            color: Colors.orange[300],
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 24),
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 12),
+                  ),
+                  child: const Text('Entendido'),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
