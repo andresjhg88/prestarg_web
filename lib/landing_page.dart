@@ -15,14 +15,28 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900], // Dark Global Background
       appBar: AppBar(
+        backgroundColor: Colors.grey[900],
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.white),
         title: Text(
           'Prestarg',
-          style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+          style: GoogleFonts.poppins(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
         actions: [
-          TextButton(onPressed: () {}, child: const Text('Inicio')),
-          TextButton(onPressed: () {}, child: const Text('Características')),
+          TextButton(
+            onPressed: () {},
+            child: const Text('Inicio', style: TextStyle(color: Colors.white)),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: const Text('Características',
+                style: TextStyle(color: Colors.white)),
+          ),
           const SizedBox(width: 20),
         ],
       ),
@@ -31,6 +45,7 @@ class LandingPage extends StatelessWidget {
           children: [
             // Hero Section
             Container(
+              width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -89,7 +104,9 @@ class LandingPage extends StatelessWidget {
             ),
 
             // Features Placeholder
-            Padding(
+            Container(
+              width: double.infinity,
+              color: Colors.grey[900],
               padding: const EdgeInsets.all(40.0),
               child: Column(
                 children: [
@@ -98,6 +115,7 @@ class LandingPage extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   const SizedBox(height: 40),
