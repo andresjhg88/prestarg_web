@@ -84,7 +84,8 @@ class LandingPage extends StatelessWidget {
                   const SizedBox(height: 40),
                   ElevatedButton(
                     onPressed: () {
-                      // TODO: Add download link
+                      _launchUrl(
+                          'https://github.com/andresjhg88/prestarg_web/releases/latest/download/prestarg_demo.apk');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -236,8 +237,11 @@ class LandingPage extends StatelessWidget {
                     color: Colors.blue.withOpacity(0.1),
                     shape: BoxShape.circle,
                   ),
-                  child:
-                      const Icon(Icons.info_outline, size: 40, color: Colors.blue),
+                  child: const Icon(
+                    Icons.info_outline,
+                    size: 40,
+                    color: Colors.blue,
+                  ),
                 ),
                 const SizedBox(height: 20),
                 Text(
@@ -268,8 +272,10 @@ class LandingPage extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.warning_amber_rounded,
-                          color: Colors.orange),
+                      const Icon(
+                        Icons.warning_amber_rounded,
+                        color: Colors.orange,
+                      ),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
@@ -293,7 +299,9 @@ class LandingPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 12),
+                      horizontal: 30,
+                      vertical: 12,
+                    ),
                   ),
                   child: const Text('Entendido'),
                 ),
