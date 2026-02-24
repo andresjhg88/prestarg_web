@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -85,7 +86,8 @@ class LandingPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       _launchUrl(
-                          'https://github.com/andresjhg88/prestarg_web/releases/latest/download/prestarg_demo.apk');
+                        'https://github.com/andresjhg88/prestarg_web/releases/latest/download/prestarg_demo.apk',
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -101,6 +103,40 @@ class LandingPage extends StatelessWidget {
                       ),
                     ),
                     child: const Text('Descargar Demo'),
+                  ),
+                ],
+              ),
+            ),
+
+            // Video Section
+            Container(
+              width: double.infinity,
+              color: Colors.grey[900],
+              padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
+              child: Column(
+                children: [
+                  Text(
+                    'Cómo funciona',
+                    style: GoogleFonts.poppins(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Mira este breve tutorial para empezar',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.roboto(
+                      fontSize: 18,
+                      color: Colors.white70,
+                    ),
+                  ),
+                  const SizedBox(height: 40),
+                  const SizedBox(
+                    width: 800, // Max width for larger screens
+                    height: 450,
+                    child: VideoPlayerWidget(),
                   ),
                 ],
               ),
@@ -311,5 +347,41 @@ class LandingPage extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+class VideoPlayerWidget extends StatefulWidget {
+  const VideoPlayerWidget({super.key});
+
+  @override
+  State<VideoPlayerWidget> createState() => _VideoPlayerWidgetState();
+}
+
+class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
+  late YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = YoutubePlayerController.fromVideoId(
+      videoId: '8skLicumWfc',
+      autoPlay: false,
+      params: const YoutubePlayerParams(
+        showControls: true,
+        showFullscreenButton: true,
+        mute: false,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.close();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return YoutubePlayer(controller: _controller, aspectRatio: 16 / 9);
   }
 }
