@@ -1,1 +1,6 @@
-{"app_name":"prestarg_web","version":"1.0.0","build_number":"1","package_name":"prestarg_web"}
+{
+  "version": "1.0.4",
+  "buildNumber": 1,
+  "downloadUrl": "https://andresjhg88.github.io/prestarg_web/downloads/prestarg_demo_v1.0.4.apk",
+  "releaseNotes": "Versión 1.0.4 - Correcciones y mejoras."
+}
