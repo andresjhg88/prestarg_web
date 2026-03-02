@@ -25,14 +25,14 @@ const RESOURCES = {"assets/AssetManifest.bin": "ef885c10d72a28af19f79353205b3669
 "downloads/prestarg_demo.apk": "a179e0048fd2bce215204d562589dd1c",
 "favicon.png": "24ae202e734d63866e1d6468dbb251dd",
 "flutter.js": "83d881c1dbb6d6bcd6b42e274605b69c",
-"flutter_bootstrap.js": "fae260605768510ff6cefc6fbda72fd0",
+"flutter_bootstrap.js": "0c549ef18e4ddb51f3139825ae4d2b73",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "index.html": "e1d307f56dd67c00311837d4bb90dd7e",
 "/": "e1d307f56dd67c00311837d4bb90dd7e",
-"main.dart.js": "df3dc16d17edbbe06cffb5a74699a689",
+"main.dart.js": "d020ef6ae1e67204e11d4d0c8fca6c3e",
 "manifest.json": "0281010ab747f0339d8578a913838953",
 "version.json": "ff432e3fc449eb5741958ca4d01d5628"};
 // The application shell files that are downloaded before a service worker can

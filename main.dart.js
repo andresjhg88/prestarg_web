@@ -60754,7 +60754,7 @@ A.S9.prototype={
 $0(){return this.a.Xl(this.b)},
 $S:0}
 A.Sa.prototype={
-$0(){this.a.pz("https://github.com/andresjhg88/prestarg_web/releases/latest/download/prestarg_demo.apk")},
+$0(){this.a.pz("https://github.com/andresjhg88/prestarg/releases/download/v1.0.4/prestarg_demo_v1.0.4.apk")},
 $S:0}
 A.S7.prototype={
 $1(a){var s,r,q,p=null,o=A.q9(20),n=B.c.ad(25.5),m=A.i0(B.An,p,p,new A.dJ(A.ao(n,B.ap.t()>>>16&255,B.ap.t()>>>8&255,B.ap.t()&255),p,p,p,p,p,B.dq),p,p,B.jW,p),l=A.hx("Sobre Prestarg",A.yD().$3$color$fontSize$fontWeight(B.j,24,B.a8),p),k=A.hx("Prestarg es tu soluci\xf3n integral para la gesti\xf3n financiera. Optimizada para ofrecerte control total, seguridad y facilidad de uso desde el primer d\xeda.",A.yE().$3$color$fontSize$height(B.x,16,1.5),B.b6)
