@@ -86,7 +86,7 @@ class LandingPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       _launchUrl(
-                        'https://github.com/andresjhg88/prestarg_web/releases/latest/download/prestarg_demo.apk',
+                        'https://github.com/andresjhg88/prestarg/releases/download/v1.0.4/prestarg_demo_v1.0.4.apk',
                       );
                     },
                     style: ElevatedButton.styleFrom(
